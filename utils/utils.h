@@ -76,19 +76,20 @@ namespace utils
         return words_map;
     }
 
-    std::tuple<uint32_t, uint32_t> GetMinMaxNumbers(uint32_t number)
+    template <typename T>
+    std::tuple<T, T> GetMinMaxNumbers(T number)
     {
-        uint32_t min_number = 0;
-        uint32_t max_number = 0;
-        uint32_t bit_shift  = 0;
-        uint32_t bits_size  = sizeof(number)*8;
+        T min_number = 0;
+        T max_number = 0;
+        T bit_shift  = 0;
+        T bits_size  = sizeof(number)*8;
 
-        for (uint32_t i = 0; i < bits_size; i++)
+        for (T i = 0; i < bits_size; i++)
         {
-            if (number >> i & uint32_t(0x01))
+            if (number >> i & T(0x01))
             {
-                min_number |= uint32_t(0x01) << bit_shift;
-                max_number |= uint32_t(0x01) << (bits_size - 1 - bit_shift);
+                min_number |= T(0x01) << bit_shift;
+                max_number |= T(0x01) << (bits_size - 1 - bit_shift);
 
                 bit_shift++;
             }
