@@ -1,22 +1,18 @@
 #include <iostream>
 #include "time.h"
+#include <fstream>
 
-#include "functions/functions.h"
+#include "utils/utils.h"
 
 int main() {
-    auto primes = std::vector<int>();
+//    clock_t tStart = clock();
+//    // some actions
+//    printf("Time taken: %.2fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
 
-    clock_t tStart = clock();
-    functions::CalcPrimeNumbers(1000000, primes);
-    printf("Time taken: %.2fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
+    auto number = uint64_t(0x5f);
+    auto [min_number, max_number] = utils::GetMinMaxNumbers(number);
 
-
-    std::cout << primes.size() << '\n';
-
-//    for (const auto& prime : primes)
-//    {
-//        std::cout << prime << " ";
-//    }
+    std::cout << "min: " <<  std::hex << min_number << " max: " << std::hex << max_number;
 
     return 0;
 }
