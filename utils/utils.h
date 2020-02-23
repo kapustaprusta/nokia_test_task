@@ -64,22 +64,18 @@ namespace utils {
         return words_map;
     }
 
-    void ListSieve(defs::List* node, int deleted_node_number = 5) {
-        if (!node || !node->next) {
-            return;
-        }
-
+    void  SieveList(defs::List* node, int deleted_node_number = 5) {
         auto curr_node = node;
         auto node_counter = 0;
 
         while (curr_node && curr_node->next) {
             node_counter++;
             if (deleted_node_number - node_counter%deleted_node_number == 1) {
-                auto tmp_next_node = curr_node->next;
+                auto sieved_node = curr_node->next;
                 curr_node->next = curr_node->next->next;
 
                 node_counter++;
-                delete tmp_next_node;
+                delete sieved_node;
             }
 
             curr_node = curr_node->next;

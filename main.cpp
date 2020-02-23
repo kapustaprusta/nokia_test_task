@@ -13,7 +13,7 @@ int main() {
     first_node->payload = 1;
 
     auto prev_node = first_node;
-    for (uint64_t i = 2; i <= 13; i++)
+    for (uint64_t i = 2; i <= 1; i++)
     {
         auto node = new defs::List{};
         node->payload = i;
@@ -21,7 +21,7 @@ int main() {
         prev_node = node;
     }
 
-    utils::ListSieve(first_node);
+    utils::SieveList(first_node);
     auto curr_node = first_node;
     while(curr_node)
     {
