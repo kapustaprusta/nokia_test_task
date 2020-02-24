@@ -10,4 +10,13 @@ namespace defs
         uint64_t payload;
     };
 
+    struct TreeNode {
+        struct TreeNode* left_child;
+        struct TreeNode* right_child;
+
+        //
+        int value;
+        //
+    };
+
 }
