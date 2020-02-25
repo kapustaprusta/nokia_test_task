@@ -20,4 +20,4 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set(SRC_ROOT_DIR ${CMAKE_CURRENT_LIST_DIR}/src)
 
 add_subdirectory(src)
-add_subdirectory(gtest)
+add_subdirectory(googletest)
