@@ -1,5 +1,5 @@
 before use don't forget init submodule
 =================
 
-git submodule init
-git submodule update
+1. git submodule init
+2. git submodule update
